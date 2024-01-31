@@ -15,8 +15,8 @@ export default function About() {
     <div className='my-4 col-md-6 about'>
       <div>
         <h3 className='text-success my-3 fw-bold'>About Cart :</h3 >
-        <div className='h5'> I used fake API store so I can't edit or add into Server DB
-        but i imiteted it with the local storage and simulate requests respnose in (console)
+        <div className='h5'> I used fake API store so I can't edit or add into database
+        but i imitated it with the local storage and requests respnose is in (console)
         </div>
       </div>
       <hr />
