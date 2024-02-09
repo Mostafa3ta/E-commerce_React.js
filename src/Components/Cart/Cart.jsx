@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styles from './Cart.module.css'
 import { CartContext } from '../../Context/CartContext'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Helmet } from "react-helmet";
 
 export default function Cart() {
-  let { getLoggedCart ,deleteCart } = useContext(CartContext)
+  let { deleteCart } = useContext(CartContext)
 
   const [IsDeleted, setIsDeleted] = useState(false)
 
@@ -28,18 +26,11 @@ export default function Cart() {
   }
 
 
-  useEffect(() => {
-
-  }, [])
-
-
-
   return <>
 
     <Helmet>
       <title>Cart</title>
     </Helmet>
-
 
 
     {myCart !== null ? <div className="p-4 my-5 bg-light ">

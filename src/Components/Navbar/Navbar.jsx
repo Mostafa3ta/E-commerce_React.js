@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
-import styles from './Navbar.module.css'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Navbar({ logOut, userData }) {
+export default function Navbar({ logOut }) {
 
   return <>
 
@@ -15,22 +14,22 @@ export default function Navbar({ logOut, userData }) {
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           {localStorage.getItem('dataToken') !== null ? <ul className="navbar-nav text-center ms-4 ">
-            <li className="nav-item p-1">
+            <li className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
             </li>
-            <li className="nav-item p-1">
+            <li className="nav-item">
               <Link className="nav-link" to="products">Products</Link>
             </li>
-            <li className="nav-item p-1">
+            <li className="nav-item">
               <Link className="nav-link" to="categories">Categories</Link>
             </li>
-            <li className="nav-item p-1">
+            <li className="nav-item">
               <Link className="nav-link" to="searchproduct"><i class="fa-solid fa-magnifying-glass px-1"></i>Search</Link>
             </li>
-            <li className="nav-item p-1 ">
+            <li className="nav-item">
               <Link className="nav-link" to="about">About</Link>
             </li>
-            <li className="nav-item p-1 ">
+            <li className="nav-item">
               {localStorage.getItem('dataToken') != null ?
                 <Link className="nav-link" to="cart">
                   <div className=' text-center '>
@@ -65,8 +64,8 @@ export default function Navbar({ logOut, userData }) {
                       <Link className="dropdown-item btn btn-light" to="addcart">User Cart</Link>
                     </li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li className="">
-                      <div onClick={logOut} className="dropdown-item bg-danger text-white w-100 cursor-pointer" >LogOut</div>
+                    <li>
+                      <div onClick={logOut}  className="dropdown-item bg-danger text-white w-100 cursor-pointer" >LogOut</div>
                     </li>
                   </ul>
                 </li>

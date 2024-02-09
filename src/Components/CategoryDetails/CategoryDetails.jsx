@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react'
-import styles from './CategoryDetails.module.css'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
@@ -7,7 +6,7 @@ import { CartContext } from '../../Context/CartContext'
 import { Helmet } from "react-helmet";
 
 export default function CategoryDetails() {
-  let { updateCartProducts, addCart , Counter} = useContext(CartContext)
+  let { updateCartProducts, addCart} = useContext(CartContext)
 
 
   let params = useParams()
@@ -22,7 +21,7 @@ export default function CategoryDetails() {
     console.log(response.data);
     console.log(response2.data);
     if (response2.data.totalProducts === 6) {
-      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + ' is  Added To Cart Successfully', { duration:4000})
+      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + ' Added To Cart Successfully', { duration:4000})
     }
   }
 
@@ -78,7 +77,7 @@ export default function CategoryDetails() {
                 </span>
               </div>
             </Link>
-            <button onClick={() => addCartProducts(product.id)} className="btn btn-outline-success w-100">+ Add to Cart</button>
+            <button onClick={() => addCartProducts(product.id)} className="btn btn-success mt-2 w-100">+ Add to Cart</button>
           </div>
         </div>)}
 

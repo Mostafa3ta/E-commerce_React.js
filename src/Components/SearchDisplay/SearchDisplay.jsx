@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styles from './SearchDisplay.module.css'
 import axios from 'axios'
 import { Link, Navigate } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Formik, useFormik } from 'formik'
-import styles from './Register.module.css'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'

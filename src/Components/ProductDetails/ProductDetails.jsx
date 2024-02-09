@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styles from './ProductDetails.module.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Slider from 'react-slick'

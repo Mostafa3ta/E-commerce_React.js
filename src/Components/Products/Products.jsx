@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Products.module.css'
 import { Helmet } from "react-helmet";
 import FeatureProducts from '../FeatureProducts/FeatureProducts';
 

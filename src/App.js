@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
-import './App.css';
 import Layout from './Components/Layout/Layout';
 import Home from './Components/Home/Home';
 import Categories from './Components/Categories/Categories';
@@ -9,16 +8,15 @@ import NotFound from './Components/NotFound/NotFound';
 import Register from './Components/Register/Register';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import CategoryDetails from './Components/CategoryDetails/CategoryDetails';
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { Toaster } from 'react-hot-toast';
 import CartContextProvider from './Context/CartContext';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import SearchDisplay from './Components/SearchDisplay/SearchDisplay';
-import AddCart from './Components/AddCart/AddCart';
+import AddCart from './Components/UserCart/AddCart';
 import About from './Components/About/About';
 import Products from './Components/Products/Products';
-import { Offline, Online, Detector } from "react-detect-offline";
 
 function App() {
 

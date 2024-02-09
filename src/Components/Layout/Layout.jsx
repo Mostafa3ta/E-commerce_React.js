@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import styles from './Layout.module.css'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import { Link, Outlet, useNavigate } from 'react-router-dom'

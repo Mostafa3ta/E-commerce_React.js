@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styles from './FeatureProducts.module.css'
 import axios from 'axios'
-import { Link, Navigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
 import toast from 'react-hot-toast'
 
@@ -25,7 +24,7 @@ export default function FeatureProducts() {
     console.log(response.data);
     console.log(response2.data);
     if (response2.data.totalProducts === 6) {
-      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + ' is  Added To Cart Successfully', {duration:4000})
+      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + '  Added To Cart Successfully', {duration:4000})
     }
   }
 
@@ -63,7 +62,7 @@ export default function FeatureProducts() {
                 <span><i className='fas fa-star rating'></i>{product.rating} </span>
               </div>
             </Link>
-            <button onClick={() => addCartProducts(product.id)} className="btn btn-outline-success mt-2 w-100">+ Add to Cart</button>
+            <button onClick={() => addCartProducts(product.id)} className="btn btn-success mt-2 w-100">+ Add to Cart</button>
           </div>
         </div>)}
       </div>

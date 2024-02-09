@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import styles from './AddCart.module.css'
 import { CartContext } from '../../Context/CartContext'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Helmet } from "react-helmet";
 

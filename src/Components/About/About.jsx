@@ -1,6 +1,4 @@
 import React from 'react'
-import styles from './About.module.css'
-import { Link } from 'react-router-dom'
 import { Helmet } from "react-helmet";
 
 

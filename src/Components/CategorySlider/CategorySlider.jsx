@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import styles from './CategorySlider.module.css'
 import Slider from 'react-slick'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
-
-
 
 export default function CategorySlider() {
 
@@ -15,9 +11,6 @@ export default function CategorySlider() {
     let { data } = await axios.get(`https://dummyjson.com/products/categories`)
     setCategories(data)
   }
-
-
-
 
   useEffect(() => {
     getCategories()
@@ -100,7 +93,7 @@ export default function CategorySlider() {
       <Slider {...settings}>
         {Categories.map((Category) =>
           <Link to={`/categorydetails/${Category}`}>
-            <div className="product  my-5 d-flex rounded-4 justify-content-center">
+            <div className="product-category  my-5 d-flex rounded-4 justify-content-center">
               <div className=" py-1  text-center">
                 <h2 className='h4 cursor-pointer text-bold'>{Category}</h2>
               </div>

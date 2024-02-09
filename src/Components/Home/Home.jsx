@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Home.module.css'
 import CategorySlider from '../CategorySlider/CategorySlider'
 import FeatureProducts from '../FeatureProducts/FeatureProducts'
 import { Helmet } from "react-helmet";
