@@ -77,7 +77,7 @@ export default function SearchDisplay() {
       </div>
       {NewCategories.length > 0 ? <h2 className='fw-bolder text-success py-4'>Categories :</h2> : null}
       {NewCategories.map((Category) =>
-        <div className="col-md-3 rounded-3 m-2 col-5 product py-2 cursor-pointer">
+        <div className="col-md-3 rounded-3 m-2 col-5 product-category py-2 cursor-pointer">
           <Link to={`/categorydetails/${Category}`}>
             <h2 className='h5 tw-bold main'>{Category}</h2>
           </Link>
@@ -99,7 +99,7 @@ export default function SearchDisplay() {
               </span>
             </div>
           </Link>
-          <button onClick={() => addCartProducts(product.id)} className="btn btn-outline-success w-100">+ Add to Cart</button>
+          <button onClick={() => addCartProducts(product.id)} className="btn btn-success w-100">+ Add to Cart</button>
         </div>
       </div>)}
     </div>
