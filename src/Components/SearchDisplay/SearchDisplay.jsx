@@ -99,7 +99,7 @@ export default function SearchDisplay() {
               </span>
             </div>
           </Link>
-          <button onClick={() => addCartProducts(product.id)} className="btn btn-success w-100">+ Add to Cart</button>
+          <button onClick={() => addCartProducts(product.id)} className="btn btn-success mt-2 w-100">+ Add to Cart</button>
         </div>
       </div>)}
     </div>

@@ -25,23 +25,6 @@ export default function Register() {
     console.log(data)
   }
 
-  // function handleRegister(values) {
-  //   return axios.post('https://dummyjson.com/users/add', values, { headers })
-  //     .then((response) => response)
-  //     .catch((err) => err)
-
-  //   // console.log(values);
-  //   // console.log();
-  // }
-
-  // async function submitUser(values) {
-  //   setisloading(true)
-  //   let response = await handleRegister(values)
-  //   console.log(response)
-  //   console.log(values)
-  //   setisloading(false)
-  // }
-
   let validationSchema = Yup.object({
     firstName: Yup.string().required('name is required').min(3, 'at least 3 characters').max(10, 'maximum is 10 characters'),
     lastName: Yup.string().required('name is required').min(3, 'at least 3 characters').max(10, 'maximum is 10 characters'),
@@ -51,46 +34,7 @@ export default function Register() {
     rePassword: Yup.string().required('rePassword is required').oneOf([Yup.ref('password')], 'password and rePassord does not match'),
     phone: Yup.string().required('phone is required').matches(/^(\+2)?01[0125][0-9]{8}$/, 'it is not egy number'),
   })
-  //   const validate = values => {
-  //     const errors = {};
-  //     if (!values.name) {
-  //       errors.name = 'Required';
-  //     } else if (values.name.length > 5) {
-  //       errors.name = 'Must be 5 characters or less';
-  //     } else if (values.name.length > 10) {
-  //       errors.name = 'Must be 10 characters or less';
-  //     }
-
-  //     if (!values.email) {
-  //       errors.email = 'email Required';
-  //     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-  //       errors.email = 'Invalid email address';
-  //     }
-
-  //     if (!values.password) {
-  //       errors.password = 'password Required'
-  //     } else if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i.test(values.password)) {
-  //       errors.password = 'password should be Minimum eight characters, at least one letter, one number and one special character'
-  //     }
-
-  //     if (!values.rePassword) {
-  //       errors.rePassword = 'rePassword Required'
-  //     } else if (values.rePassword !== values.password) {
-  //       errors.rePassword = 'rePassword and password must be identical '
-  //     }
-
-  //     if (!values.phone) {
-  //       errors.phone = 'phone Required'
-  //     } else if (!/^(01)[0125]{9}/i.test(values.phone)) {
-  //       errors.phone = 'it should be egyption phone number'
-  //     }
-
-
-
-  //   return errors;
-  // };
-
-
+ 
 
 
   let formik = useFormik({
