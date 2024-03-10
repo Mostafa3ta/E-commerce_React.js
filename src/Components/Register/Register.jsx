@@ -102,8 +102,8 @@ export default function Register() {
             <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phone} type="tel" name='phone' id='phone' className='form-control mb-2 ' />
             {formik.errors.phone && formik.touched.phone ? <div className='alert alert-danger'>{formik.errors.phone}</div> : null}
 
-            {isloading ? <button type='button' className="btn btn-success my-3"><i className='fas fa-spinner fa-spin'></i></button> :
-              <button disabled={!(formik.isValid && formik.dirty)} type='submit' className="btn btn-success my-3">Register</button>}
+            {isloading ? <button type='button' className="btn btn-warning my-3"><i className='fas fa-spinner fa-spin'></i></button> :
+              <button disabled={!(formik.isValid && formik.dirty)} type='submit' className="btn btn-warning my-3">Register</button>}
 
 
           </form>

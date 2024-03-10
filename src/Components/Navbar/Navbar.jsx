@@ -30,14 +30,13 @@ export default function Navbar({ logOut }) {
               <Link className="nav-link" to="about">About</Link>
             </li>
             <li className="nav-item">
-              {localStorage.getItem('dataToken') != null ?
-                <Link className="nav-link" to="cart">
-                  <div className=' text-center '>
-                    <i className="fa-solid position-relative fa-cart-shopping">
-                      {(localStorage.getItem('CartCount')) !== null ? <span className='cart-count bg-warning pt-1 rounded-3 text-white'>{(JSON.parse(localStorage.getItem('CartCount')))}</span> : null}
-                    </i>
-                  </div>
-                </Link> : null}
+              <Link className="nav-link" to="cart">
+                <div className=' text-center '>
+                  <i className="fa-solid position-relative fa-cart-shopping">
+                    {(localStorage.getItem('CartCount')) !== null ? <span className='cart-count bg-warning pt-1 rounded-3 text-white'>{(JSON.parse(localStorage.getItem('CartCount')))}</span> : null}
+                  </i>
+                </div>
+              </Link>
             </li>
           </ul> : null}
           <ul className="navbar-nav ms-auto mt-2 me-0 mt-lg-0">
@@ -65,7 +64,7 @@ export default function Navbar({ logOut }) {
                     </li>
                     <li><hr className="dropdown-divider" /></li>
                     <li>
-                      <div onClick={logOut}  className="dropdown-item bg-danger text-white w-100 cursor-pointer" >LogOut</div>
+                      <div onClick={logOut} className="dropdown-item bg-danger text-white w-100 cursor-pointer" >LogOut</div>
                     </li>
                   </ul>
                 </li>

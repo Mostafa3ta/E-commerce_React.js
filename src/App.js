@@ -8,7 +8,7 @@ import NotFound from './Components/NotFound/NotFound';
 import Register from './Components/Register/Register';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import CategoryDetails from './Components/CategoryDetails/CategoryDetails';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { Toaster } from 'react-hot-toast';
 import CartContextProvider from './Context/CartContext';
@@ -17,6 +17,7 @@ import SearchDisplay from './Components/SearchDisplay/SearchDisplay';
 import AddCart from './Components/UserCart/AddCart';
 import About from './Components/About/About';
 import Products from './Components/Products/Products';
+import PreventLogin from './Components/ProtectedRoute/PreventLogin';
 
 function App() {
 
@@ -28,9 +29,9 @@ function App() {
   }, [])
 
   function saveUserData() {
-    let encodedToken = localStorage.getItem('dataToken')
-    let decodedToken = jwtDecode(encodedToken)
-    console.log(decodedToken);
+    // let encodedToken = localStorage.getItem('dataToken')
+    // let decodedToken = jwtDecode(encodedToken)
+    // console.log(decodedToken);
   }
 
   let routers = createBrowserRouter([
@@ -45,17 +46,18 @@ function App() {
         { path: 'addcart', element: <ProtectedRoute><AddCart /></ProtectedRoute> },
         { path: 'about', element: <ProtectedRoute><About /></ProtectedRoute> },
         { path: 'productdetails/:id', element: <ProtectedRoute><ProductDetails /> </ProtectedRoute> },
-        { path: 'login', element: <Login saveUserData={saveUserData} /> },
-        { path: 'register', element: <Register /> },
+        { path: 'login', element: <PreventLogin><Login saveUserData={saveUserData} /></PreventLogin> },
+        { path: 'register', element: <PreventLogin><Register /></PreventLogin> },
         { path: '*', element: <NotFound /> },
       ]
     }
   ])
 
-  return <><CartContextProvider>
-    <Toaster />
-    <RouterProvider router={routers}></RouterProvider>
-  </CartContextProvider>
+  return <>
+    <CartContextProvider>
+      <Toaster />
+      <RouterProvider router={routers}></RouterProvider>
+    </CartContextProvider>
   </>
 }
 

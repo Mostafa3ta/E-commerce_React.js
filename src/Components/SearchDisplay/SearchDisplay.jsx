@@ -49,8 +49,6 @@ export default function SearchDisplay() {
     }
   }
 
-
-
   const handleChang = (value) => {
     setSearchValue(value);
     getProducts(value);
