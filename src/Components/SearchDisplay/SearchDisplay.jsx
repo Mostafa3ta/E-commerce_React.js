@@ -27,6 +27,7 @@ export default function SearchDisplay() {
       })
 
   }
+
   function getCategories(value) {
     return axios.get(`https://dummyjson.com/products/categories`)
       .then((response) => response)
@@ -55,6 +56,7 @@ export default function SearchDisplay() {
     getCategories(value)
     localStorage.setItem('searchValue', value)
   }
+  
   useEffect(() => {
     if (localStorage.getItem('searchValue') !== null) {
       setSearchValue(localStorage.getItem('searchValue'));

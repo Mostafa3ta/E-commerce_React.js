@@ -2,11 +2,11 @@ import axios from "axios";
 import { createContext, useState } from "react";
 
 
-export let CartContext = createContext();
+export const CartContext = createContext();
 
 export default function CartContextProvider(props) {
 
-    let headers = { 'Content-Type': 'application/json' }
+    const headers = { 'Content-Type': 'application/json' }
 
     const [UserId, setUserId] = useState([]);
 
@@ -35,7 +35,6 @@ export default function CartContextProvider(props) {
             { headers })
             .then((response) => response)
             .catch((err) => err)
-
     }
 
     function deleteCart(id) {

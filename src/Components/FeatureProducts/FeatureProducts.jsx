@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
 import toast from 'react-hot-toast'
 
 export default function FeatureProducts() {
 
-  let { updateCartProducts, addCart ,Counter } = useContext(CartContext);
+  let { updateCartProducts, addCart, Counter } = useContext(CartContext);
 
   const [isLoading, setisLoading] = useState(false)
   const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ export default function FeatureProducts() {
     console.log(response.data);
     console.log(response2.data);
     if (response2.data.totalProducts === 6) {
-      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + '  Added To Cart Successfully', {duration:4000})
+      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + '  Added To Cart Successfully', { duration: 4000 })
     }
   }
 
@@ -33,8 +33,6 @@ export default function FeatureProducts() {
   }, [])
 
   return <>
-
-
 
     {isLoading ? <section id="loading">
       <div className="sk-cube-grid">

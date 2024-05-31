@@ -37,10 +37,8 @@ export default function Login({ saveUserData, setUserInfo }) {
     } else {
       navigate('/login')
       setisloading(false)
-
     }
   }
-
 
   let formik = useFormik({
     initialValues: {

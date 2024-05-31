@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 export default function Register() {
   let navigate = useNavigate();
@@ -34,8 +34,6 @@ export default function Register() {
     rePassword: Yup.string().required('rePassword is required').oneOf([Yup.ref('password')], 'password and rePassord does not match'),
     phone: Yup.string().required('phone is required').matches(/^(\+2)?01[0125][0-9]{8}$/, 'it is not egy number'),
   })
- 
-
 
   let formik = useFormik({
     initialValues: {
