@@ -91,8 +91,8 @@ export default function Login({ saveUserData, setUserInfo }) {
         <div className=' mx-5 my-2'>
           <div className='h4 '>To Have Access Enter :</div>
           <ul >
-            <li>username: <span className='fw-bolder px-2'>atuny0</span> </li>
-            <li>password: <span className='fw-bolder px-2'>9uQFF1Lh</span> </li>
+            <li>username: <span className='fw-bolder px-2'>emilys</span> </li>
+            <li>password: <span className='fw-bolder px-2'>emilyspass</span> </li>
           </ul>
         </div>
 
