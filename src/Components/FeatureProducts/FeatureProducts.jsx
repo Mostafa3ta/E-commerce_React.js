@@ -52,7 +52,7 @@ export default function FeatureProducts() {
         {products.map((product) => <div key={product.id} className="cursor-pointer col-md-4 col-6 col-lg-3 col-xl-2">
           <div className="my-3 py-3 product px-2 rounded-3 ">
             <Link to={`/productdetails/${product.id}`}>
-              <img src={product.thumbnail} className='w-100' height={110} alt="" />
+              <img src={product.thumbnail} className='w-100'  alt="img" />
               <span className='text-success font-sm'>{product.category}</span>
               <h3 className='h6 fw-bolder'>{product.title.split(' ').slice(0, 2).join(' ')}</h3>
               <div className='d-flex justify-content-between'>

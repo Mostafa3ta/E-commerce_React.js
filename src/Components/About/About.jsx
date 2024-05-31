@@ -14,7 +14,7 @@ export default function About() {
       <div>
         <h3 className='text-success my-3 fw-bold'>About Cart :</h3 >
         <div className='h5'> I used fake API store so I can't edit or add into database
-        but i imitated it with the local storage and requests respnose is in (console)
+          but i imitated it with the local storage and requests respnose is in (console)
         </div>
       </div>
       <hr />
@@ -23,13 +23,6 @@ export default function About() {
         <div className='h5'>you cannot signup new user into the server it simulates the request and the response is
           in the (console), And there's a given username belongs to a user stored in
           the database it respondes with a Token that you cannot access the wepsite without it .
-        </div>
-      </div>
-      <hr />
-      <div>
-        <h3 className='text-success my-3 fw-bold'>About Products :</h3 >
-        <div className='h5'> The products images from the API are all different in width and height which
-          is bad for User Experience ,So I had to give them a fixed height
         </div>
       </div>
       <hr />

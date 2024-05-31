@@ -6,7 +6,7 @@ import { CartContext } from '../../Context/CartContext'
 import { Helmet } from "react-helmet";
 
 export default function CategoryDetails() {
-  let { updateCartProducts, addCart} = useContext(CartContext)
+  let { updateCartProducts, addCart } = useContext(CartContext)
 
 
   let params = useParams()
@@ -21,7 +21,7 @@ export default function CategoryDetails() {
     console.log(response.data);
     console.log(response2.data);
     if (response2.data.totalProducts === 6) {
-      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + ' Added To Cart Successfully', { duration:4000})
+      toast.success(response2.data.products[5].title.split(' ').slice(0, 2).join(' ') + ' Added To Cart Successfully', { duration: 4000 })
     }
   }
 
@@ -62,11 +62,11 @@ export default function CategoryDetails() {
       </div>
     </section> :
       <div className="row my-3 mt-4">
-        <h2 className='fw-bolder text-success mt-4'>{`${ParamsCategory}`} :</h2>
+        <h2 className='fw-bolder text-success mt-4'>{ParamsCategory} :</h2>
         {CategoryDetails.map((product) => <div key={product.id} className="cursor-pointer col-md-4 col-6 col-lg-3 col-xl-2">
           <div className="my-2 py-3 product rounded-2 px-2 ">
             <Link to={`/productdetails/${product.id}`}>
-              <img src={product.thumbnail} className='w-100' height={110} alt="" />
+              <img src={product.thumbnail} className='w-100' alt="" />
               <span className='text-success font-sm'>{product.category}</span>
               <h3 className='h6 fw-bolder'>{product.title.split(' ').slice(0, 2).join(' ')}</h3>
               <div className='d-flex justify-content-between'>

@@ -33,7 +33,7 @@ export default function SearchDisplay() {
       .then((response) => response)
       .then((response) => {
         const results = response.data.filter((category) => {
-          return value && category.toLowerCase().includes(value.toLowerCase())
+          return value && category.name.toLowerCase().includes(value.toLowerCase())
         })
         console.log(results);
         setNewCategories(results)
@@ -78,8 +78,8 @@ export default function SearchDisplay() {
       {NewCategories.length > 0 ? <h2 className='fw-bolder text-success py-4'>Categories :</h2> : null}
       {NewCategories.map((Category) =>
         <div className="col-md-3 rounded-3 m-2 col-5 product-category py-2 cursor-pointer">
-          <Link to={`/categorydetails/${Category}`}>
-            <h2 className='h5 tw-bold main'>{Category}</h2>
+          <Link to={`/categorydetails/${Category.slug}`}>
+            <h2 className='h5 tw-bold main'>{Category.name}</h2>
           </Link>
         </div>
       )}

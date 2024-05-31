@@ -92,10 +92,10 @@ export default function CategorySlider() {
     <div className="row m-auto mb-5 bg-light rounded-3">
       <Slider {...settings}>
         {Categories.map((Category) =>
-          <Link to={`/categorydetails/${Category}`}>
+          <Link to={`/categorydetails/${Category.slug}`}>
             <div className="product-category  my-5 d-flex rounded-4 justify-content-center">
               <div className=" py-1  text-center">
-                <h2 className='h4 cursor-pointer text-bold'>{Category}</h2>
+                <h2 className='h4 cursor-pointer text-bold'>{Category.name}</h2>
               </div>
             </div>
           </Link>

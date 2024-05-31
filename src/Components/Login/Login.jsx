@@ -18,7 +18,8 @@ export default function Login({ saveUserData, setUserInfo }) {
 
   let validationSchema = Yup.object({
     username: Yup.string().required('name is required').min(3, 'at least 3 characters').max(10, 'maximum is 10 characters'),
-    password: Yup.string().required('password is required').matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number'),
+    password: Yup.string().required('password is required')
+    // .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number'),
   })
 
 
