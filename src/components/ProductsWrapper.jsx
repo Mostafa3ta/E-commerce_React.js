@@ -4,6 +4,7 @@ import Rate from './Rate'
 import { addToCart } from '../redux/CartSlice'
 import { useDispatch } from 'react-redux'
 import { AddToFav, RemoveFromFav } from '../redux/FavSlice'
+import PriceCalc from './PriceCalc'
 
 export default function ProductsWrapper({ products }) {
     const dispatch = useDispatch()
@@ -22,12 +23,13 @@ export default function ProductsWrapper({ products }) {
                 <Link to={`/productdetails/${product.id}`}>
                     <img src={product.thumbnail} className='w-100' alt="productImg" />
                     <span className='text-success pt-1 text-capitalize font-sm'>{product.category}</span>
-                    <h3 className='h6 fw-bolder p-0 m-0'>{product.title?.split(' ').slice(0, 2).join(' ')}</h3>
+                    <h3 className='h6 fw-bolder p-0 mb-1'>{product.title?.split(' ').slice(0, 2).join(' ')}</h3>
                     <Rate currentRate={product.rating} rateSize={'rateSize'} />
-                    <div className='d-flex gap-2 my-2'>
+                    <PriceCalc discountPercentage={product.discountPercentage} price={product.price} />
+                    {/* <div className='d-flex gap-2 my-2'>
                         <span className='fw-semibold'>${Math.trunc(product.price)}</span>
                         <div className='bg-success-subtle px-1 fs-6 fw-bold text-success my-auto rounded w-auto'> - {product.discountPercentage}%</div>
-                    </div>
+                        </div> */}
                 </Link>
                 <div className='d-flex gap-1 mt-3 align-items-center'>
                     <button onClick={() => dispatch(addToCart(product))} className="btn btn-success btn-add p-1 w-75">+ Add</button>

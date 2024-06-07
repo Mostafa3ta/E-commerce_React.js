@@ -149,6 +149,12 @@ a:hover {
     background: black;
 }
 
+.oldPrice{
+    text-decoration: line-through;
+    font-size: small;
+    margin-top: 0;
+}
+
 .searchBar {
     width: 60% !important;
 }

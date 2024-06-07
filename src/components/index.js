@@ -7,6 +7,7 @@ import PreventLogin from "./PreventLogin";
 import ProtectedRoute from "./ProtectedRoute";
 import Rate from "./Rate";
 import ProductsWrapper from "./ProductsWrapper";
+import PriceCalc from "./PriceCalc";
 
 
 export {
@@ -16,6 +17,7 @@ export {
     CategorySlider,
     FeatureProducts,
     ProductsWrapper,
+    PriceCalc,
     Rate,
     Loading,
     Footer,
