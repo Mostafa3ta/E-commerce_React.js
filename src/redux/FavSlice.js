@@ -14,7 +14,7 @@ const FavouriteSlice = createSlice({
                 (item) => item?.id === action.payload?.id
             );
             if (existingIndex >= 0) {
-                toast.warning(`${action.payload.title.split(' ').slice(0, 2).join(' ')} alredy in your wishlist`, {
+                toast.warning(`${action.payload.title.split(' ').slice(0, 2).join(' ')} already in your wishlist`, {
                     position: "bottom-left",
                 });
             } else {
