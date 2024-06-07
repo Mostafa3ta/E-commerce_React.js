@@ -149,6 +149,17 @@ a:hover {
     background: black;
 }
 
+.searchBar {
+    width: 60% !important;
+}
+
+@media screen and (max-width:750px) {
+    .searchBar {
+        width: 80% !important;
+    }
+
+}
+
 .signCard .title::before {
     content: "";
     position: absolute;
@@ -217,11 +228,11 @@ a:hover {
     -o-transition: all .5s ease;
     /* Opera */
     -ms-transition: all .5s ease;
-    }
-    
-    .product {
-        box-shadow: var(--shadow);
-        transition: all .5s ease;
+}
+
+.product {
+    box-shadow: var(--shadow);
+    transition: all .5s ease;
 }
 
 @media screen and (max-width:1000px) {

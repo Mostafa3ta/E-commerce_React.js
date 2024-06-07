@@ -23,7 +23,7 @@ export default function SearchDisplay() {
     <div className='container page'>
       <div className="row my-3 align-items-center mt-4">
         <div className="d-flex justify-content-center">
-          <input className="form-control m-4 px-4 w-50 border-success rounded-5 " onChange={(e) => setSearchValue(e.target.value)} value={SearchValue} type="search" placeholder="Search for Products" aria-label="Search" />
+          <input className="form-control m-4 px-4 searchBar border-success rounded-5 " onChange={(e) => setSearchValue(e.target.value)} value={SearchValue} type="search" placeholder="Search for Products" aria-label="Search" />
         </div>
 
         {productSearch?.productSearch?.products?.length === 0 ? <>
