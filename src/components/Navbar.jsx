@@ -45,7 +45,7 @@ export default function Navbar({ logOut }) {
               </Link>
             </li>
           </ul>}
-          <ul className="navbar-nav ms-lg-auto mt-2 text-end me-lg-0 mt-lg-0">
+          <ul className="navbar-nav ms-sm-auto mt-2 text-end me-sm-0 mt-lg-0">
             {localStorage.getItem('dataToken') === null ? <>
               <li className="nav-item text-center px-1">
                 <Link className="nav-link text-main" to="register">Sign Up</Link>
