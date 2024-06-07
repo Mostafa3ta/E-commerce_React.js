@@ -7,7 +7,6 @@ const FavouriteSlice = createSlice({
         favItems: localStorage.getItem("favItems")
             ? JSON.parse(localStorage.getItem("favItems"))
             : [],
-        isFav: false
     },
     reducers: {
         AddToFav: (state, action) => {
@@ -34,7 +33,7 @@ const FavouriteSlice = createSlice({
                         (item) => item.id !== cartItem.id
                     );
                     state.favItems = nextCartItems;
-                    toast.error(`${cartItem.title.split(' ').slice(0, 2).join(' ')} removed from wishlist`, {
+                    toast.error(`${cartItem.title?.split(' ').slice(0, 2).join(' ')} removed from wishlist`, {
                         position: "bottom-left",
                     });
                 }

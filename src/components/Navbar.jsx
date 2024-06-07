@@ -45,13 +45,13 @@ export default function Navbar({ logOut }) {
               </Link>
             </li>
           </ul>}
-          <ul className="navbar-nav ms-auto mt-2 me-0 mt-lg-0">
+          <ul className="navbar-nav ms-lg-auto mt-2 text-end me-lg-0 mt-lg-0">
             {localStorage.getItem('dataToken') === null ? <>
               <li className="nav-item text-center px-1">
-                <Link className="nav-link text-main " to="register">Sign Up</Link>
+                <Link className="nav-link text-main" to="register">Sign Up</Link>
               </li>
               <li className="nav-item text-center px-1">
-                <Link className="nav-link text-main " to="login">Sign In</Link>
+                <Link className="nav-link text-main" to="login">Sign In</Link>
               </li> </>
               : <div className='dropstart'>
                 <li className="nav-item text-center dropdown">

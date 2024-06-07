@@ -24,7 +24,7 @@ export default function FeatureProducts() {
 
     {products?.loading ? <Loading />
       : <>
-        <h2 className='fw-bolder text-success pb-4 pt-2'>Products :</h2>
+        <h2 className='fw-bolder text-success py-2'>Products :</h2>
         <div className="row align-items-center my-3 bg-light rounded-3">
 
           <ProductsWrapper products={products?.products?.products} />

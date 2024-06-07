@@ -27,8 +27,8 @@ export default function CategoryDetails() {
 
     {categoryDetails?.loading ? <Loading /> :
       <div className='container page'>
-        <div className="row my-3 mt-4">
-          <h2 className='fw-bolder text-success text-capitalize mt-4'>{`${params.category.split('-').join(' ')}`} :</h2>
+        <div className="row my-4">
+          <h2 className='fw-bolder text-success text-capitalize'>{`${params.category.split('-').join(' ')}`} :</h2>
           <ProductsWrapper products={categoryDetails?.categoryDetails?.products} />
 
         </div>

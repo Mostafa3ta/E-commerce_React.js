@@ -15,7 +15,7 @@ export default function Favourite() {
       <title>Cart</title>
     </Helmet>
     <div className='p-4 my-5 bg-light rounded'>
-      <h2 className='fw-bolder fs-1'>Wishlist</h2>
+      <h2 className='fw-bolder fs-1 titleLine'>Wishlist</h2>
       {favourite?.favItems?.length === 0 ? (
         <div className="cart-empty">
           <p className="notFound text-start my-3 fs-5">Your Wishlist is currently empty</p>
@@ -25,9 +25,10 @@ export default function Favourite() {
         <div className="row align-items-center productsContain my-3 bg-light rounded-3">
           <ProductsWrapper products={favourite?.favItems} />
         </div>
-        <div className="d-flex">
-          <button onClick={() => navigate('/')} className='btn btn-secondary m-2'>Continue Shopping</button>
-          <button onClick={() => dispatch(clearFav())} className='btn btn-danger m-2'>Clear Wishlist</button>
+        <hr className='w-75 m-2 text-center mx-auto' />
+        <div className="d-flex justify-content-center">
+          {/* <button onClick={() => navigate('/')} className='btn btn-secondary m-2'>Continue Shopping</button> */}
+          <button onClick={() => dispatch(clearFav())} className='btn btn-sm btn-danger my-3'>Clear Wishlist</button>
         </div>
       </>)}
     </div >

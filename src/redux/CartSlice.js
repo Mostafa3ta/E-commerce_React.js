@@ -20,17 +20,18 @@ const AddToCartSlice = createSlice({
                     ...state.cartItems[existingIndex],
                     cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
                 };
-                toast.info(`Increased ${state.cartItems[existingIndex].title.split(' ').slice(0, 2).join(' ')} quantity`, {
+                toast.info(`Increased ${state.cartItems[existingIndex]?.title?.split(' ').slice(0, 2).join(' ')} quantity`, {
                     position: "bottom-left",
                 });
             } else {
                 let tempProductItem = { ...action.payload, cartQuantity: 1 };
                 state.cartItems.push(tempProductItem);
-                toast.success(`${action.payload.title.split(' ').slice(0, 2).join(' ')} added to cart`, {
+                toast.success(`${action.payload?.title?.split(' ').slice(0, 2).join(' ')} added to cart`, {
                     position: "bottom-left",
                 });
             }
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+
         },
         decreaseCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
@@ -40,7 +41,7 @@ const AddToCartSlice = createSlice({
             if (state.cartItems[itemIndex].cartQuantity > 1) {
                 state.cartItems[itemIndex].cartQuantity -= 1;
 
-                toast.info(`Decreased ${state.cartItems[itemIndex].title.split(' ').slice(0, 2).join(' ')} quantity`, {
+                toast.info(`Decreased ${state.cartItems[itemIndex]?.title?.split(' ').slice(0, 2).join(' ')} quantity`, {
                     position: "bottom-left",
                 });
             } else if (state.cartItems[itemIndex].cartQuantity === 1) {
@@ -66,7 +67,7 @@ const AddToCartSlice = createSlice({
 
                     state.cartItems = nextCartItems;
 
-                    toast.error(`${cartItem.title.split(' ').slice(0, 2).join(' ')} removed from cart`, {
+                    toast.error(`${cartItem.title?.split(' ').slice(0, 2).join(' ')} removed from cart`, {
                         position: "bottom-left",
                     });
                 }

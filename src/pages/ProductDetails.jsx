@@ -87,7 +87,7 @@ export default function ProductDetails() {
       <div className='container page'>
         <div className="row py-3 my-3">
           <div className="col-md-5 col-lg-4 ">
-            <div className='d-flex my-5 flex-column gap-5'>
+            <div className='d-flex my-2 flex-column gap-5'>
               <div className='p-3'>
                 {productDetails?.productDetails?.images?.length > 1 ? <>
                   <Slider {...settings} className='shadow'>
@@ -97,22 +97,22 @@ export default function ProductDetails() {
                   </Slider>
                 </> : <img src={productDetails?.productDetails?.images} className='w-100 object-fit-contain shadow' alt="product-img" />}
               </div>
-              <div className='d-flex px-3 gap-1'>
+              <div className='d-flex px-3 mb-2 gap-1'>
                 <button onClick={() => dispatch(addToCart(productDetails?.productDetails))} className="btn bg-success w-75 text-white">+ Add to Cart</button>
                 {productDetails?.productDetails?.isFav ?
 
-                  <button onClick={() => handleRemoveFav(productDetails?.productDetails)} className='btn btn-light p-1 w-25'>
+                  <button onClick={() => handleRemoveFav(productDetails?.productDetails)} className='btn btn-light bg-secondary-subtle p-1 w-25'>
                     <i className="fa-solid fs-6 text-danger fa-heart"></i>
                   </button>
                   :
-                  <button onClick={() => handleAddToFav(productDetails?.productDetails)} className='btn btn-light p-1 w-25'>
+                  <button onClick={() => handleAddToFav(productDetails?.productDetails)} className='btn btn-light bg-secondary-subtle p-1 w-25'>
                     <i className="fa-regular fs-5 text-secondary fa-heart"></i>
                   </button>
                 }
               </div>
             </div>
           </div>
-          <div className="col-md-7 col-lg-8 detailsContain rounded my-5">
+          <div className="col-md-7 col-lg-8 detailsContain rounded my-2">
             <div className='py-2'>
               <h3 className=' text-bold py-1 m-0'>{productDetails?.productDetails?.title}</h3>
               <div className='d-flex gap-2 p-0 m-0'>
@@ -176,11 +176,11 @@ export default function ProductDetails() {
         <hr />
 
         <div>
-          <h2 className='fw-bolder text-success py-4'>Reviews :</h2>
+          <h2 className='fw-bolder text-success py-3'>Reviews :</h2>
           <div className='row gap-4 mb-3 align-items-center'>
             {productDetails?.productDetails?.reviews?.map((review) => <>
               <div className='col-md-6 p-3 reviewCard rounded'>
-                <div className="d-flex  gap-2">
+                <div className="d-flex align-items-center  gap-2">
                   <i className="fa-solid rounded-circle bg-secondary reviewIcon p-3 text-white fs-4 fa-user"></i>
                   <div className='d-flex flex-column gap-0'>
                     <h6 className='p-0 m-0'>{review.reviewerName}</h6>

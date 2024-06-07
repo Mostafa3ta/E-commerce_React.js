@@ -34,9 +34,9 @@ export default function Cart() {
         </Helmet>
 
         <div className="p-4 my-5 bg-light rounded">
-            <h2 className='fw-bolder fs-1'>Cart</h2>
+            <h2 className='fw-bolder titleLine fs-1'>Cart</h2>
             {cart.cartItems.length === 0 ? (
-                <div className="cart-empty">
+                <div >
                     <p className="notFound text-start my-3 fs-5">Your cart is currently empty</p>
                     <button onClick={() => navigate('/')} className="btn btn-secondary">Start Shopping</button>
                 </div>
@@ -52,7 +52,7 @@ export default function Cart() {
                     <div>
                         {/* {cart.cartItems && */}
                         {cart.cartItems.map((product) => (
-                            <div className='row my-3 align-items-center '>
+                            <div key={product.id} className='row my-3 align-items-center '>
 
                                 <Link to={`/productdetails/${product.id}`} className="col-md-2 col-sm-3 col-4 my-2 cursor-pointer">
                                     <img src={product.thumbnail} className='w-100' alt="" />
@@ -83,8 +83,8 @@ export default function Cart() {
                         ))}
                     </div>
                     <div className="d-flex">
-                        <button onClick={() => navigate('/')} className='btn btn-secondary m-2'>Continue Shopping</button>
-                        <button onClick={() => handleClearCart()} className='btn btn-danger m-2'>Clear Cart</button>
+                        {/* <button onClick={() => navigate('/')} className='btn btn-secondary m-2'>Continue Shopping</button> */}
+                        <button onClick={() => handleClearCart()} className='btn btn-sm btn-danger m-2'>Clear Cart</button>
                     </div>
                 </div>
             )
