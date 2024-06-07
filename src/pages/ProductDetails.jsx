@@ -121,7 +121,7 @@ export default function ProductDetails() {
                 <div className=''><span>reviews</span> ({productDetails?.productDetails?.reviews?.length})</div>
               </div>
             </div>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex align-items-center justify-content-between">
               <div className='w-75 my-auto'>
                 <p className='py-2'>{productDetails?.productDetails?.description}</p>
               </div>
@@ -132,7 +132,7 @@ export default function ProductDetails() {
             <hr className='py-1 my-1' />
 
             {productDetails?.productDetails?.brand && <> <div className='d-flex my-0'>
-              <h5 className='text-muted'>Brand : <span className='fs-6 px-2 text-black'>{productDetails?.productDetails?.brand}</span></h5>
+              <h6 className='text-muted'>Brand : <span className='fs-6 px-2 text-black'>{productDetails?.productDetails?.brand}</span></h6>
             </div>
               <hr className='py-1 my-1' /> </>}
 
@@ -160,16 +160,17 @@ export default function ProductDetails() {
             <hr className='py-1 my-1' />
 
             <div className='d-flex my-0'>
-              <h6 className='text-muted'>Return : <span className='fs-6 px-2 text-black'>{productDetails?.productDetails?.returnPolicy}</span></h6>
-            </div>
-            <hr className='py-1 my-1' />
-
-            <div className='d-flex mb-1'>
               <h6 className='text-muted'>Categouries :</h6>
               <Link to={`/categorydetails/${productDetails?.productDetails?.category}`} >
                 <h6 className='px-2 text-capitalize cursor-pointer categoryHover'>{productDetails?.productDetails?.category}</h6>
               </Link>
             </div>
+            <hr className='py-1 my-1' />
+
+            <div className='d-flex mb-1'>
+              <h6 className='text-muted'>Return : <span className='fs-6 px-2 text-black'>{productDetails?.productDetails?.returnPolicy}</span></h6>
+            </div>
+
           </div>
         </div>
         <hr />
@@ -184,15 +185,17 @@ export default function ProductDetails() {
                   <div className='d-flex flex-column gap-0'>
                     <h6 className='p-0 m-0'>{review.reviewerName}</h6>
                     <p className='p-0 m-0'>{review.reviewerEmail}</p>
-                    <Rate currentRate={review.rating} />
                   </div>
                 </div>
                 {/* <hr className='w-75 m-2 text-center mx-auto' /> */}
-                <h5 className='pt-4 px-3'>
+                <h5 className='py-3 px-1'>
                   {review.comment}
                 </h5>
                 {/* <hr className='w-75 m-2 text-center mx-auto' /> */}
-                <p className='p-0 m-0 text-end text-muted'>{review.date.split('T0').slice(0, 1)}</p>
+                <div className='d-flex justify-content-between'>
+                <Rate currentRate={review.rating} rateSize={'rateSize'} />
+                <p className='p-0 m-0 text-muted'>{review.date.split('T0').slice(0, 1)}</p>
+                </div>
               </div>
             </>)}
           </div>

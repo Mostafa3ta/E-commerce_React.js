@@ -29,7 +29,7 @@ export default function FeatureProducts() {
 
           <ProductsWrapper products={products?.products?.products} />
 
-          <div className='d-flex gap-2 justify-content-center align-items-center mb-3'>
+          <div className='d-flex gap-2 justify-content-center align-items-center my-4'>
             {page === 0 ? <button disabled className=' btn-success btn-sm btn'>
               <i className="fa-solid fa-angles-left"></i>
             </button> :

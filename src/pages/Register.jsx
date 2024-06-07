@@ -44,7 +44,7 @@ export default function Register() {
   return <>
 
     <Helmet>
-      <title>SignUp</title>
+      <title>Sign-Up</title>
     </Helmet>
 
     {newUserData?.loading ? <Loading /> :
@@ -54,7 +54,7 @@ export default function Register() {
           <div className=" m-auto py-4 w-75">
 
             <div>
-              <h2 className='mb-4 py-1 title text-main'>Sign-In</h2>
+              <h2 className='mb-4 py-1 title text-main'>Sign-Up</h2>
             </div>
             <div className='my-3'>
               <h4 className='mb-0'>Welcome !</h4>

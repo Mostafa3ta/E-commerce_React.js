@@ -38,7 +38,7 @@ export default function Login({ setUserInfo }) {
   return <>
 
     <Helmet>
-      <title>Login</title>
+      <title>Sign-In</title>
     </Helmet>
 
     <div className="container d-flex flex-column justify-content-center align-items-center page">
